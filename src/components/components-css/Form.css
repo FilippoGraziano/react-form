@@ -1,0 +1,42 @@
+form #inputs {
+    text-align: center;
+}
+
+form #inputs > div {
+    display: inline-block;
+}
+
+form #inputs > div:first-child {
+    margin-right: 30px;
+}
+
+form label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 250px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+form button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 7px 15px;
+    font-size: 16px;
+}
+
+form button:active {
+    background-color: rgb(255, 202, 42);
+    color: black;
+}
