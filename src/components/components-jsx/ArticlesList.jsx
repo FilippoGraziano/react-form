@@ -2,7 +2,7 @@ import "../components-css/ArticlesList.css"
 
 const ArticlesList = props => (
 
-    <ul>
+    <ul id="articles-list">
 
         {props.articles.map(el => (
 
@@ -17,7 +17,7 @@ const ArticlesList = props => (
         ))}
 
     </ul>
-    
+
 );
 
 export default ArticlesList
