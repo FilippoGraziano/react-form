@@ -1,0 +1,5 @@
+export const articles = [
+    { id: 1, title: `Ultimo fumetto uscito`, description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloremque illum maxime ipsa illo repellat a rem, ab iste nemo soluta repudiandae reprehenderit laborum sit ea temporibus assumenda harum dolorem!`},
+    { id: 2, title: `La squadra che ha vinto il campionato`, description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloremque illum maxime ipsa illo repellat a rem, ab iste nemo soluta repudiandae reprehenderit laborum sit ea temporibus assumenda harum dolorem!`},
+    { id: 3, title: `Ultimo film uscito al cinema`, description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloremque illum maxime ipsa illo repellat a rem, ab iste nemo soluta repudiandae reprehenderit laborum sit ea temporibus assumenda harum dolorem!`},
+];
