@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useState } from 'react'
 import { articles } from './components/data'
 
@@ -16,6 +17,10 @@ const App = () => {
 
           <li key={el.id}>
             <h2>{el.title}</h2>
+            <p>{el.description}</p>
+            <button onClick={() => setArticles(_articles.filter(newEl => newEl.id !== el.id))}>
+              <i className="bi bi-trash3"></i>
+            </button>
           </li>
 
         ))}
