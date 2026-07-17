@@ -3,7 +3,18 @@ import "../components-css/Form.css"
 
 const Form = props => {
 
-    const [input, setInput] = useState({ title: ``, description: `` })
+    const [formData, setFormData] = useState({ title: ``, body: ``, author: ``, public: false })
+
+    const handleFormData = e => {
+
+        const value = e.target.type === `checkbox` ? e.target.checked : e.target.value;
+
+        return (
+
+            setFormData({ ...formData, [e.target.name]: value }
+
+        ));
+    };
 
     return (
 
@@ -11,9 +22,9 @@ const Form = props => {
 
             e.preventDefault(),
 
-            props.addArticles([...props.articles, { ...props.articles.at(-1), title: input.title, id: (props.articles.at(-1).id + 1), description: input.description }]),
+            props.addArticles([...props.articles, { ...props.articles.at(-1), ...formData, id: crypto.randomUUID() }]),
 
-            setInput({ title: ``, description: `` })
+            setFormData({ title: ``, body: ``, author: ``, public: false })
 
         )}>
             <div id="inputs">
@@ -21,14 +32,28 @@ const Form = props => {
                 <div>
 
                     <label id='new-title'>Scrivi un titolo</label>
-                    <input type="text" placeholder="Aggiungi titolo" value={input.title} onChange={e => setInput({ ...input, title: e.target.value })} />
+                    <input type="text" name="title" placeholder="Aggiungi titolo" value={formData.title} onChange={handleFormData} />
 
                 </div>
 
                 <div>
 
-                    <label id='new-description'>Aggiungi una descrizione</label>
-                    <input type="text" placeholder="Aggiungi descrizione" value={input.description} onChange={e => setInput({ ...input, description: e.target.value })} />
+                    <label id='new-title'>Scrivi un autore</label>
+                    <input type="text" name="author" placeholder="Aggiungi titolo" value={formData.author} onChange={handleFormData} />
+
+                </div>
+
+                <div>
+
+                    <label id='new-body'>Aggiungi una descrizione</label>
+                    <input type="text" name="body" placeholder="Aggiungi descrizione" value={formData.body} onChange={handleFormData} />
+
+                </div>
+
+                <div>
+
+                    <label id='new-public'>Metti la crcetta se vuoi che sia pubblico</label>
+                    <input type="checkbox" name="public" placeholder="Aggiungi descrizione" value={formData.public} onChange={handleFormData} />
 
                 </div>
 
