@@ -13,7 +13,7 @@ const Form = props => {
 
             setFormData({ ...formData, [e.target.name]: value }
 
-        ));
+            ));
     };
 
     return (
@@ -31,29 +31,32 @@ const Form = props => {
 
                 <div>
 
-                    <label id='new-title'>Scrivi un titolo</label>
+                    <label>Scrivi un titolo</label>
                     <input type="text" name="title" placeholder="Aggiungi titolo" value={formData.title} onChange={handleFormData} />
 
                 </div>
 
                 <div>
 
-                    <label id='new-title'>Scrivi un autore</label>
+                    <label>Scrivi un autore</label>
                     <input type="text" name="author" placeholder="Aggiungi titolo" value={formData.author} onChange={handleFormData} />
 
                 </div>
 
                 <div>
 
-                    <label id='new-body'>Aggiungi una descrizione</label>
+                    <label>Scrivi una descrizione</label>
                     <input type="text" name="body" placeholder="Aggiungi descrizione" value={formData.body} onChange={handleFormData} />
 
                 </div>
 
-                <div>
+                <div className="input-checkbox">
 
-                    <label id='new-public'>Metti la crcetta se vuoi che sia pubblico</label>
-                    <input type="checkbox" name="public" placeholder="Aggiungi descrizione" value={formData.public} onChange={handleFormData} />
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="public" placeholder="Aggiungi descrizione" value={formData.public} onChange={handleFormData} />
+                        <span className="label">Vuoi l'articolo pubblico?</span>
+                        <span className="box"></span>
+                    </label>
 
                 </div>
 
