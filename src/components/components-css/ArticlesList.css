@@ -13,16 +13,17 @@
     flex-basis: calc((100% / 3) - 20px);
     flex-grow: 1;
     border-radius: 8px;
+    position: relative;
 }
 
 #articles-list h2 {
-    border-bottom: 2px solid black;
-    margin-bottom: 15px;
     padding: 15px;
+    padding-bottom: 7px;
 }
 
 #articles-list p {
     padding: 0 15px;
+    padding-top: 15px;
 }
 
 #articles-list button {
@@ -40,4 +41,22 @@
 #articles-list button:active {
     background-color: rgb(255, 202, 42);
     color: black;
+}
+
+#articles-list address {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    display: block;
+}
+
+#articles-list #state {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    translate: -25% -50%;
 }
