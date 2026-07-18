@@ -11,9 +11,9 @@ const App = () => {
   return (
     <main className='container'>
 
-      <ArticlesList articles={_articles} removeArticles={event => setArticles(event)}/>
+      <ArticlesList articles={_articles} setArticles={setArticles}/>
 
-      <Form articles={_articles} addArticles={event => setArticles(event)} />
+      <Form articles={_articles} addArticles={setArticles} />
 
     </main>
   )

@@ -1,3 +1,21 @@
+#articles-list .off {
+    display: none;
+}
+
+/* #articles-list button.off {
+    display: inline-block;
+    background-color: rgb(255, 202, 42);
+    color: black;
+} */
+
+/*r input and label */
+
+#articles-list label {
+    display: block;
+}
+
+/*r -------------------------------------------------------------- */
+
 #articles-list {
     list-style: none;
     display: flex;
@@ -36,6 +54,10 @@
     font-size: 20px;
     margin-bottom: 15px;
     cursor: pointer;
+}
+
+#articles-list button:last-child{
+    margin-left: 10px;
 }
 
 #articles-list button:active {
