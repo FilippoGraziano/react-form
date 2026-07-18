@@ -52,7 +52,7 @@ const Form = props => {
 
                 <div className="input-checkbox">
 
-                    <label class="custom-checkbox">
+                    <label className="custom-checkbox">
                         <input type="checkbox" name="public" placeholder="Aggiungi descrizione" value={formData.public} onChange={handleFormData} />
                         <span className="label">Vuoi l'articolo pubblico?</span>
                         <span className="box"></span>
