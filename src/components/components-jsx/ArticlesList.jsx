@@ -5,9 +5,6 @@ const ArticlesList = props => {
 
     const [input, setInput] = useState({})
     const [openModify, setOpenModify] = useState(undefined)
-    const [modify, setModify] = useState({change: false})
-
-
 
     const handleInput = (e, articleId) => (
         setInput({...input, [articleId]: {...input[articleId], [e.target.name]: e.target.value}})
@@ -19,44 +16,41 @@ const ArticlesList = props => {
 
             {props.articles.map(el => {
 
+                const isModify = openModify === el.id
                 const currentArticleData = input[el.id] || { title: "", author: "", body: "" };
 
                 return (
 
                     <li key={el.id}>
 
-                        <h2 className={openModify === el.id ? `off` : ``}>{modify.change ?
-                            currentArticleData.title === `` ? el.title : currentArticleData.title
-                            : el.title}
-                        </h2>
+                        {/*r Title */}
+                        <h2 hidden={isModify}>{currentArticleData.title === `` ? el.title : currentArticleData.title}</h2>
 
-                        <div>
-                            <label className={openModify === el.id ? `` : `off`}>Modifica il titolo</label>
-                            <input className={openModify === el.id ? `` : `off`} type="text" name="title" value={input.title} onChange={(e) => handleInput(e, el.id)} />
+                        <div hidden={!isModify}>
+                            <label>Modifica il titolo</label>
+                            <input type="text" name="title" value={input.title} onChange={(e) => handleInput(e, el.id)} />
                         </div>
 
-                        <address className={openModify === el.id ? `off` : ``}>{modify.change ?
-                            currentArticleData.author === `` ? el.author : currentArticleData.author
-                            : el.author}
-                        </address>
+                        {/*r Author */}
+                        <address className={openModify === el.id ? `off` : ``}>{currentArticleData.author === `` ? el.author : currentArticleData.author}</address>
 
-                        <div>
-                            <label className={openModify === el.id ? `` : `off`}>Modifica l'autore</label>
-                            <input className={openModify === el.id ? `` : `off`} type="text" name="author" value={input.author} onChange={(e) => handleInput(e, el.id)} />
+                        <div hidden={!isModify}>
+                            <label>Modifica l'autore</label>
+                            <input type="text" name="author" value={input.author} onChange={(e) => handleInput(e, el.id)} />
                         </div>
 
-                        <p className={openModify === el.id ? `off` : ``}>{modify.change ?
-                            currentArticleData.body === `` ? el.body : currentArticleData.body
-                            : el.body}
-                        </p>
+                        {/*r Description */}
+                        <p hidden={isModify}>{currentArticleData.body === `` ? el.body : currentArticleData.body}</p>
 
-                        <div>
-                            <label className={openModify === el.id ? `` : `off`}>Modifica la descrizione</label>
-                            <input className={openModify === el.id ? `` : `off`} type="text" name="body" value={input.body} onChange={(e) => handleInput(e, el.id)} />
+                        <div hidden={!isModify}>
+                            <label>Modifica la descrizione</label>
+                            <input type="text" name="body" value={input.body} onChange={(e) => handleInput(e, el.id)} />
                         </div>
 
+                        {/*r Article state */}
                         <span id="state">{el.public ? `Publico!` : `Privato!`}</span>
 
+                        {/*r Modify button and delete button */}
                         <div>
 
                             <div>
